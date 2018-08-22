@@ -7,9 +7,7 @@ __Installation__
 Nimtess2 can be installed via [Nimble](https://github.com/nim-lang/nimble):
 
 ```
-> git clone https://github.com/genotrance/nimtess2
-> cd nimtess2
-> nimble install
+> nimble install https://github.com/genotrance/nimtess2
 ```
 
 This will download, wrap and install nimtess2 in the standard Nimble package location, typically ~/.nimble. Once installed, it can be imported into any Nim program.
