@@ -1,0 +1,5 @@
+nimtess2
+nimcache
+*.exe
+*.swp
+ttess*
