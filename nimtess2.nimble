@@ -18,8 +18,8 @@ if detectOs(Windows):
     cmd = "cmd /c "
 
 task setup, "Download and generate":
-	withDir "..":
-		exec cmd & "nimble install nimgen -y"
+    withDir "..":
+        exec cmd & "nimble install nimgen -y"
     exec cmd & "nimgen nimtess2.cfg"
 
 before install:
