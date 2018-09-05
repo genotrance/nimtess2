@@ -14,6 +14,8 @@ This will download, wrap and install nimtess2 in the standard Nimble package loc
 
 __Usage__
 
+Module documentation can be found [here](http://nimgen.genotrance.com/nimtess2).
+
 ```nim
 import nimtess2/tesselator
 
