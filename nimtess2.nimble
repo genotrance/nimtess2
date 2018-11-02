@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.1.1"
 author        = "genotrance"
 description   = "Nim wrapper for libtess2"
 license       = "MIT"
@@ -11,17 +11,20 @@ skipDirs = @["tests"]
 
 requires "nimgen >= 0.4.0"
 
-import distros
+var
+  name = "nimtess2"
+  cmd = when defined(Windows): "cmd /c " else: ""
 
-var cmd = ""
-if detectOs(Windows):
-  cmd = "cmd /c "
+mkDir(name)
 
-task setup, "Download and generate":
-  exec cmd & "nimgen nimtess2.cfg"
+task setup, "Checkout and generate":
+  if gorgeEx(cmd & "nimgen").exitCode != 0:
+    withDir(".."):
+      exec "nimble install nimgen -y"
+  exec cmd & "nimgen " & name & ".cfg"
 
 before install:
   setupTask()
 
-task test, "Test nimtess2":
-  exec "nim c -r tests/ttess2.nim"
+task test, "Run tests":
+  exec "nim c -r tests/t" & name & ".nim"
