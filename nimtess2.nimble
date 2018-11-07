@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.1"
+version       = "0.1.0"
 author        = "genotrance"
 description   = "Nim wrapper for libtess2"
 license       = "MIT"
