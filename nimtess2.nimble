@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.1.1"
 author        = "genotrance"
 description   = "Nim wrapper for libtess2"
 license       = "MIT"
@@ -15,7 +15,8 @@ var
   name = "nimtess2"
   cmd = when defined(Windows): "cmd /c " else: ""
 
-mkDir(name)
+if fileExists(name & ".nimble"):
+  mkDir(name)
 
 task setup, "Checkout and generate":
   if gorgeEx(cmd & "nimgen").exitCode != 0:
